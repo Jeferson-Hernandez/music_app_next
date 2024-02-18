@@ -1,0 +1,18 @@
+.content {
+  padding: 20px 25px 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iconSize {
+  height: 24px;
+  width: 24px;
+}
+
+@media (min-width: 900px) {
+  .content {
+    display: none;
+  }
+}

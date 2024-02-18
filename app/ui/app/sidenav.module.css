@@ -1,0 +1,45 @@
+.content {
+  display: none;
+  height: 100%;
+  flex-direction: column;
+  padding-top: 30px;
+  gap: 55px;
+  align-items: center;
+  width: 6.5rem;
+}
+
+.menu_content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background: var(--bg-dark-alt);
+}
+
+.menu_icons {
+  padding: 25px 20px;
+  border-end-end-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.icon_size {
+  height: 24px;
+  width: 24px;
+}
+
+.filter_secondary:hover {
+  fill: var(--secondary);
+}
+
+@media (min-width: 900px) {
+  .content {
+    width: 130px;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    display: flex;
+  }
+}

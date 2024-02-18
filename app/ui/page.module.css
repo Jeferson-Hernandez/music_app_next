@@ -1,0 +1,12 @@
+.container {
+  padding-inline: 20px;
+}
+
+@media (min-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - 150px);
+    padding-inline: 0;
+  }
+}

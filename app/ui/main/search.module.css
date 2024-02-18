@@ -1,0 +1,27 @@
+.container {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 75px;
+    margin-top: 20px;
+  }
+
+  .input_icon {
+    width: 25px;
+    height: 25px;
+    stroke: var(--secondary);
+    margin: 0px 15px;
+  }
+
+  .input {
+    all: unset;
+    background: var(--bg-dark);
+    color: gray; 
+    height: 100%;
+  }
+}

@@ -1,0 +1,73 @@
+.container {
+  background: var(--light);
+  height: 130px;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 80px;
+}
+
+.glass_effect {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.5px);
+  -webkit-backdrop-filter: blur(10.5px);
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.song_card {
+  display: flex;
+  flex-direction: row;
+}
+
+.song_card_info {
+  margin-left: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.song_card_title {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin: 0;
+}
+
+.song_card_subtitle {
+  font-size: .9em;
+  font-weight: 300;
+  color: gray;
+  padding-top: 5px;
+  margin: 0;
+}
+
+.song_card_img {
+  border-radius: 20px;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  margin-inline: 10px;
+}
+
+.play_icon {
+  fill: var(--secondary);
+}
+
+.song_length {
+  display: none;
+}
+
+.volume_container {
+  display: none;
+}
