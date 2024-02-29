@@ -28,6 +28,7 @@
 .song_card {
   display: flex;
   flex-direction: row;
+  margin-left: 10px;
 }
 
 .song_card_info {
@@ -55,8 +56,8 @@
 }
 
 .icon {
-  width: 35px;
-  height: 35px;
+  width: 39px;
+  height: 39px;
   margin-inline: 10px;
 }
 
@@ -70,4 +71,46 @@
 
 .volume_container {
   display: none;
+  margin-right: 15px;
+}
+
+
+@media (min-width: 900px) {
+  .flex {
+    gap: 10px;
+  }
+
+  .song_length {
+    display: block;
+  }
+
+  .player_controls_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 2;
+  }
+
+  .player_controls {
+    padding-bottom: 10px;
+  }
+
+  .volume_container {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+  }
+
+  .volume_icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+@media (min-width: 1300px) { 
+ .container {
+  padding-inline: 10%;
+ }
 }

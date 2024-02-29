@@ -20,8 +20,15 @@
 
   .input {
     all: unset;
-    background: var(--bg-dark);
     color: gray; 
     height: 100%;
+    width: 100%;
+    transition: padding 0.5s ease;
+  }
+
+  .input:focus{
+    background: var(--bg-dark);
+    border-radius: 30px;
+    padding-left: 20px;
   }
 }

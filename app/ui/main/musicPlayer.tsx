@@ -36,7 +36,7 @@ const MusicPlayer = () => {
         </div>
       </div>
       <div className={`${style.volume_container}`}>
-        <SpeakerWaveIcon className={`${style.icon}`}/>
+        <SpeakerWaveIcon className={`${style.icon} ${style.volume_icon}`}/>
         <div>length of the volume</div>
       </div>
     </footer>
