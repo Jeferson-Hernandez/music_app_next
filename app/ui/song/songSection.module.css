@@ -1,0 +1,51 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.cover_container {
+  width: 100%;
+  height: 350px;
+  max-width: 500px;
+}
+
+.song_cover {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.song_title {
+  font-size: 2.1rem;
+  color: var(--light-blue);
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.song_artist {
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  margin-top: 5px;
+}
+
+.song_album {
+ margin: 0;
+ padding-bottom: 15px;
+}
+
+.album_text {
+  color: var(--secondary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.song_likes {
+ color: var(--light);
+ margin: 0;
+
+}

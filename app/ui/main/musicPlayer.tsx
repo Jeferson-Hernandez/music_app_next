@@ -31,13 +31,11 @@ const MusicPlayer = () => {
           <PlayCircleIcon className={`${style.icon} ${style.play_icon}`}/>
           <ForwardIcon className={`${style.icon}`}/>
         </div>
-        <div className={`${style.song_length}`}>
-          length of the song
-        </div>
+        <input type="range" max={100} min={0} className={`${style.seek_slider}`} />
       </div>
       <div className={`${style.volume_container}`}>
         <SpeakerWaveIcon className={`${style.icon} ${style.volume_icon}`}/>
-        <div>length of the volume</div>
+        <input type="range" max={100} min={0} className={`${style.volume_slider}`} />
       </div>
     </footer>
   )

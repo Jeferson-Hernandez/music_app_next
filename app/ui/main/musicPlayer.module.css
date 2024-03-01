@@ -32,9 +32,7 @@
 }
 
 .song_card_info {
-  margin-left: 15px;
-  margin-top: auto;
-  margin-bottom: auto;
+  display: none;
 }
 
 .song_card_title {
@@ -74,6 +72,19 @@
   margin-right: 15px;
 }
 
+.seek_slider {
+  display: none;
+}
+
+@media (min-width: 650px) {
+  .song_card_info {
+    display: block;
+    margin-left: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
 
 @media (min-width: 900px) {
   .flex {
@@ -106,11 +117,21 @@
     width: 20px;
     height: 20px;
   }
+
+  .seek_slider {
+    display: block;
+    width: 100%;
+  }
+
 }
 
 
 @media (min-width: 1300px) { 
  .container {
   padding-inline: 10%;
+ }
+
+ .seek_slider {
+  width: 85%;
  }
 }

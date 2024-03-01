@@ -1,5 +1,7 @@
 import style from '@/app/[id]/page.module.css'
 import Image from 'next/image'
+import { fetchSongById } from '../lib/data'
+import SongSection from '../ui/song/songSection'
 
 type SongDetailProps = {
   params: {
@@ -7,18 +9,19 @@ type SongDetailProps = {
   }
 }
 
-const SongDetail = ({ params }: SongDetailProps) => {
+const SongDetail = async({ params }: SongDetailProps) => {
+  const data = await fetchSongById(params.id)
   return (
-    <section className={`${style.container}`}>
+    <div className={`${style.container}`}>
       <Image
-        src="/assets/asianKungfuGeneration.jpg"
-        width={300}
-        height={300}
+        src={data.cover_img_lg}
+        width={1500}
+        height={1500}
         alt='test'
         className={`${style.fixed} ${style.opacity}`}
       />
-      <div>card</div>
-    </section>
+      <SongSection song={data} />
+    </div>
   )
 }
 
