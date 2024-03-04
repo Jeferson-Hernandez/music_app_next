@@ -7,6 +7,7 @@ type SongType = {
   liked: boolean;
   cover_img_sm: string;
   cover_img_lg: string;
+  song_url: string;
 }
 
 type ArtistType = {
@@ -29,6 +30,6 @@ interface SongById extends SongList {
   album_name: string
 }
 
-export type SongListType = Omit<SongList, 'artist_id' | 'likes' | 'album_id' | 'liked' | 'cover_img_lg'>
-export type TopChartsType = Omit<SongList, 'artist_id' | 'album_id' | 'liked' | 'cover_img_lg'>
+export type SongListType = Omit<SongList, 'artist_id' | 'likes' | 'album_id' | 'liked' | 'cover_img_lg' | 'song_url'>
+export type TopChartsType = Omit<SongList, 'artist_id' | 'album_id' | 'cover_img_lg' | 'song_url'>
 export type SongByIdType = Omit<SongById, 'artist_id' | 'album_id'>

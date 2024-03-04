@@ -1,6 +1,7 @@
 import style from "@/app/ui/main/musicList.module.css"
 import Image from "next/image"
 import { fetchSongs } from "@/app/lib/data"
+import SongCard from "../components/songCard"
 
 type MusicListProps = {
   title: string,
@@ -16,17 +17,7 @@ const MusicList = async({ title }: MusicListProps) => {
       <div className={`${style.flex}`}>
         {
           songs.map((song) => (
-            <div key={song.id} className={`${style.card}`}>
-                <Image
-                  src={song.cover_img_sm}
-                  width={200}
-                  height={200}
-                  alt={`cover of the song ${song.title}`}
-                  className={`${style.card_img}`}
-                />
-                <p className={`${style.card_title}`}>{song.title}</p>
-                <p className={`${style.card_subtitle}`}>{song.artist_name}</p>
-            </div>
+            <SongCard key={song.id} song={song} />
           ))
         }
       </div>

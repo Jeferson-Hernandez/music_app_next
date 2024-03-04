@@ -1,7 +1,6 @@
 .container {
   background: var(--light);
   height: 130px;
-  width: 100vw;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -18,11 +17,10 @@
 
 .glass_effect {
   /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(239, 238, 224, 0.05);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10.5px);
-  -webkit-backdrop-filter: blur(10.5px);
-  border-top: 1px solid rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .song_card {
@@ -44,7 +42,7 @@
 .song_card_subtitle {
   font-size: .9em;
   font-weight: 300;
-  color: gray;
+  color: var(--secondary);
   padding-top: 5px;
   margin: 0;
 }
@@ -101,6 +99,10 @@
     justify-content: center;
     align-items: center;
     flex: 2;
+  }
+
+  .song_card {
+    max-width: 300px;
   }
 
   .player_controls {

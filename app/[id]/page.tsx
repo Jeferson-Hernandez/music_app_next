@@ -2,6 +2,7 @@ import style from '@/app/[id]/page.module.css'
 import Image from 'next/image'
 import { fetchSongById } from '../lib/data'
 import SongSection from '../ui/song/songSection'
+import SongAlbum from '../ui/song/songAlbum'
 
 type SongDetailProps = {
   params: {
@@ -21,6 +22,7 @@ const SongDetail = async({ params }: SongDetailProps) => {
         className={`${style.fixed} ${style.opacity}`}
       />
       <SongSection song={data} />
+      <SongAlbum/>
     </div>
   )
 }

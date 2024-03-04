@@ -46,3 +46,11 @@ ul {
     flex-direction: row;
   }
 }
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type="range"] {
+  accent-color: var(--secondary);
+}

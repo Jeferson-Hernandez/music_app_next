@@ -17,3 +17,9 @@
 .opacity {
   opacity: 0.05;
 }
+
+@media (min-width: 900px) {
+  .container {
+    padding-inline: 0;
+  }
+}

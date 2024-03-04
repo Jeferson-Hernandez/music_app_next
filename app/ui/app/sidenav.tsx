@@ -1,8 +1,12 @@
+'use client'
+
 import styles from '@/app/ui/app/sidenav.module.css'
 import { HomeIcon, UserIcon, ArchiveBoxIcon, ArrowLeftEndOnRectangleIcon } from '@heroicons/react/24/solid'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 const SideNav = () => {
+  const router = useRouter()
   return (
     <>
       <nav className={`${styles.content}`}>
@@ -14,8 +18,8 @@ const SideNav = () => {
           />
           <div>
             <ul className={`${styles.menu_content} ${styles.menu_icons}`}>
-              <li><HomeIcon className={`${styles.filter_secondary} ${styles.icon_size}`}/></li>
-              <li><ArchiveBoxIcon className={`${styles.filter_secondary} ${styles.icon_size}`}/></li>
+              <li><HomeIcon onClick={() => router.push('/')} className={`${styles.filter_secondary} ${styles.icon_size}`}/></li>
+              <li><ArchiveBoxIcon onClick={() => router.push('/')} className={`${styles.filter_secondary} ${styles.icon_size}`}/></li>
             </ul>
           </div>
           <div>

@@ -2,8 +2,8 @@ import style from '@/app/ui/main/heroSection.module.css'
 import Image from 'next/image'
 
 import { most_liked_playlist } from '@/app/lib/constants'
-import { HeartIcon } from '@heroicons/react/24/outline'
 import { fetchTopSongs } from '@/app/lib/data'
+import TopChartCard from '../components/topChartCard'
 
 const HeroSection = async() => {
 
@@ -30,21 +30,7 @@ const HeroSection = async() => {
         <div className={`${style.top_charts_container}`}>
           {
             top_charts.map((song) => (
-              <div key={song.id} className={`${style.song_card}`}>
-                <Image
-                  src={song.cover_img_sm}
-                  width={145}
-                  height={130}
-                  alt={`cover of the song ${song.title}`}
-                  className={`${style.song_card_image}`}
-                />
-                <div className={`${style.song_card_info}`}>
-                  <h3 className={`${style.song_card_title}`}>{song.title}</h3>
-                  <p className={`${style.song_card_artist}`}>{song.artist_name}</p>
-                  <span className={`${style.song_card_likes}`}>{song.likes} likes</span>
-                </div>
-                <HeartIcon className={`${style.song_card_heart_icon}`} />
-              </div>
+              <TopChartCard key={song.id} song={song} />
             ))
           }
         </div>
