@@ -15,9 +15,11 @@ const MusicPlayer = () => {
 
   const { 
     currentSong,
+    songInstance,
     isPlaying,
     duration,
     seekSliderValue,
+    volumeValue,
     handleSeekSlider,
     handlePlay,
     handleVolume
@@ -25,7 +27,7 @@ const MusicPlayer = () => {
 
   
 
-  if (!currentSong) {
+  if (!songInstance || !currentSong) {
     return
   }
 
@@ -58,7 +60,7 @@ const MusicPlayer = () => {
       </div>
       <div className={`${style.volume_container}`}>
         <SpeakerWaveIcon className={`${style.icon} ${style.volume_icon}`}/>
-        <input onChange={handleVolume} defaultValue={1} type="range" max={1} min={0} step={.05} className={`${style.volume_slider}`} />
+        <input onChange={handleVolume} value={volumeValue} defaultValue={1} type="range" max={1} min={0} step={.05} className={`${style.volume_slider}`} />
       </div>
     </footer>
   )

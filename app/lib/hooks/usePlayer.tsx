@@ -8,10 +8,12 @@ export const usePlayer = () => {
   const [duration, setDuration] = useState<number>()
   const [seekSliderValue, setSeekSliderValue] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
+  const [volume, setVolume] = useState(1)
 
   useEffect(() => {
     if (song) {
       song.unload()
+      setSong(undefined)
       setIsPlaying(false)
       setSeekSliderValue(0)
     }
@@ -54,7 +56,9 @@ export const usePlayer = () => {
 
   const handleVolume = (e: ChangeEvent<HTMLInputElement>) => {
     if (song) {
-      Howler.volume(Number(e.target.value))
+      const volumeValue = Number(e.target.value)
+      Howler.volume(volumeValue)
+      setVolume(volumeValue)
     }
   }
 
@@ -66,9 +70,11 @@ export const usePlayer = () => {
 
   return {
     currentSong,
+    songInstance: song,
     isPlaying,
     duration,
     seekSliderValue,
+    volumeValue: volume,
     handlePlay,
     handleVolume,
     handleSeekSlider
