@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
+    "@types/howler": "^2.2.11",
     "@vercel/postgres": "^0.7.2",
     "clsx": "^2.1.0",
     "howler": "^2.2.4",

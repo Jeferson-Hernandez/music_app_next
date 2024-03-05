@@ -19,7 +19,7 @@ const SideNav = () => {
           <div>
             <ul className={`${styles.menu_content} ${styles.menu_icons}`}>
               <li><HomeIcon onClick={() => router.push('/')} className={`${styles.filter_secondary} ${styles.icon_size}`}/></li>
-              <li><ArchiveBoxIcon onClick={() => router.push('/')} className={`${styles.filter_secondary} ${styles.icon_size}`}/></li>
+              <li><ArchiveBoxIcon onClick={() => router.push('/collections')} className={`${styles.filter_secondary} ${styles.icon_size}`}/></li>
             </ul>
           </div>
           <div>

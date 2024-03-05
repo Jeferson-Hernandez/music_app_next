@@ -4,25 +4,30 @@ import style from "@/app/ui/main/musicPlayer.module.css"
 import Image from "next/image"
 import {
   PlayCircleIcon,
+  PauseCircleIcon,
   ForwardIcon,
   BackwardIcon,
   SpeakerWaveIcon
 } from '@heroicons/react/24/solid'
-import { SongType, useSongStore } from "@/app/lib/store"
-import { useEffect, useRef, useState} from "react"
 import { usePlayer } from "@/app/lib/hooks/usePlayer"
 
 const MusicPlayer = () => {
-  const { currentSong } = useSongStore();
-  const playerRef = useRef<HTMLAudioElement>(null);
-    
-  const { seekSlideValue, handlePlayState, handleSeekSlider, handleVolume } = usePlayer(playerRef);
+
+  const { 
+    currentSong,
+    isPlaying,
+    duration,
+    seekSliderValue,
+    handleSeekSlider,
+    handlePlay,
+    handleVolume
+   } = usePlayer()
+
   
+
   if (!currentSong) {
     return
   }
-
-  console.log(playerRef)
 
   return (
     <footer className={`${style.container} ${style.glass_effect} ${style.flex}`}>
@@ -40,17 +45,20 @@ const MusicPlayer = () => {
         </div>
       </div>
       <div className={`${style.player_controls_container}`}>
-        <audio onTimeUpdate={handleSeekSlider} ref={playerRef} src={`${currentSong.song_url}`} preload="metadata"></audio>
         <div className={`${style.player_controls}`}>
           <BackwardIcon className={`${style.icon}`}/>
-          <PlayCircleIcon onClick={handlePlayState}  className={`${style.icon} ${style.play_icon}`}/>
+          {
+            isPlaying
+              ? <PauseCircleIcon onClick={handlePlay}  className={`${style.icon} ${style.play_icon}`}/>
+              : <PlayCircleIcon onClick={handlePlay}  className={`${style.icon} ${style.play_icon}`}/>
+          }
           <ForwardIcon className={`${style.icon}`}/>
         </div>
-        <input type="range" readOnly value={seekSlideValue} max={playerRef.current?.duration} min={0} className={`${style.seek_slider}`} />
+        <input type="range" onChange={handleSeekSlider} value={seekSliderValue} max={duration} min={0} className={`${style.seek_slider}`} />
       </div>
       <div className={`${style.volume_container}`}>
         <SpeakerWaveIcon className={`${style.icon} ${style.volume_icon}`}/>
-        <input onChange={handleVolume} defaultValue={100} type="range" max={100} min={0} className={`${style.volume_slider}`} />
+        <input onChange={handleVolume} defaultValue={1} type="range" max={1} min={0} step={.05} className={`${style.volume_slider}`} />
       </div>
     </footer>
   )

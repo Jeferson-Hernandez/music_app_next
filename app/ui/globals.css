@@ -5,6 +5,7 @@
   --light-blue: #A4C7C6;
   --bg-dark: #1D2123;
   --bg-dark-alt: #1A1E1F;
+  --bg-gray: #33373B;
 }
 
 * {
@@ -44,6 +45,10 @@ ul {
   body {
     display: flex;
     flex-direction: row;
+  }
+
+  .section_container {
+    width: calc(100vw - 150px);
   }
 }
 

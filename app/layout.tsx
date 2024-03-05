@@ -24,7 +24,7 @@ export default function RootLayout({
       <body id="body" className={inter.className}>
         <Navbar />
         <SideNav />
-        <section>
+        <section className="section_container">
           <Search />
           {children}
         </section>

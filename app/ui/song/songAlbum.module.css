@@ -1,0 +1,47 @@
+.content {
+  width: 100%;
+  margin-top: 70px;
+  margin-bottom: 150px;
+}
+
+.song_container {
+  position: relative;
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
+  padding: 15px 15px;
+  background-color: var(--bg-gray);
+  margin-bottom: 15px;
+  border-radius: 10px;
+  gap: 15px;
+  max-width: 1100px;
+}
+
+.cover_img {
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.song_title {
+  margin: 0;
+  color: var(--light);
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.heart_icon {
+  display: none;
+}
+
+.ellipsis_icon {
+  position: absolute;
+  right: 0;
+  margin-right: 5px;
+  stroke: var(--secondary);
+}
+
+.icon {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}

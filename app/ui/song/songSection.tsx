@@ -3,7 +3,7 @@
 import style from '@/app/ui/song/songSection.module.css'
 import { SongByIdType } from '@/app/lib/definitions'
 import Image from 'next/image'
-import { PlayCircleIcon } from '@heroicons/react/24/solid'
+import { PlayCircleIcon, EllipsisVerticalIcon } from '@heroicons/react/24/solid'
 import { HeartIcon } from '@heroicons/react/24/outline'
 import { MouseEvent } from 'react'
 import { usePathname } from 'next/navigation'

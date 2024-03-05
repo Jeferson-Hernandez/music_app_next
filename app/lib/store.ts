@@ -10,15 +10,26 @@ export type SongType = {
 
 type SongStore = {
   currentSong: SongType | null,
-  setSong: (song: SongType) => void
+  listSongs: SongType[],
+  setSong: (song: SongType) => void 
 }
 
 export const useSongStore = create<SongStore>((set) => ({
   currentSong: null,
-  setSong: (song) => set(() => ({ currentSong: {
-    title: song.title,
-    artist_name: song.artist_name,
-    cover_img_sm: song.cover_img_sm,
-    song_url: song.song_url
-  }}))
+  listSongs: [],
+  setSong: (song) => set((state) => {
+    const newSong = {
+      title: song.title,
+      artist_name: song.artist_name,
+      cover_img_sm: song.cover_img_sm,
+      song_url: song.song_url
+    }
+
+    const songInList = state.listSongs.find((song) => song.title == newSong.title)
+
+    return {
+      currentSong: newSong,
+      listSongs: songInList ? [...state.listSongs] : [...state.listSongs, newSong]
+    }
+  })
 }))

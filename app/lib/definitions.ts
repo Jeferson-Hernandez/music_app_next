@@ -32,4 +32,6 @@ interface SongById extends SongList {
 
 export type SongListType = Omit<SongList, 'artist_id' | 'likes' | 'album_id' | 'liked' | 'cover_img_lg' | 'song_url'>
 export type TopChartsType = Omit<SongList, 'artist_id' | 'album_id' | 'cover_img_lg' | 'song_url'>
-export type SongByIdType = Omit<SongById, 'artist_id' | 'album_id'>
+export type SongByIdType = Omit<SongById, 'artist_id'>
+export type SongByAlbumType = Omit<SongList, 'artist_id' | 'likes' | 'album_id' | 'liked' | 'cover_img_lg' | 'song_url'>
+export type LikedSongsType = Omit<SongList, 'artist_id' | 'album_id' | 'cover_img_lg' | 'liked' | 'likes' >

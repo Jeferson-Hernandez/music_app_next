@@ -20,6 +20,6 @@
 
 @media (min-width: 900px) {
   .container {
-    padding-inline: 0;
+    padding-left: 0;
   }
 }
