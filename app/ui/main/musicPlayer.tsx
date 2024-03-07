@@ -10,6 +10,7 @@ import {
   SpeakerWaveIcon
 } from '@heroicons/react/24/solid'
 import { usePlayer } from "@/app/lib/hooks/usePlayer"
+import { MusicPlayerSkeleton } from "../app/skeletons"
 
 const MusicPlayer = () => {
 
@@ -26,9 +27,12 @@ const MusicPlayer = () => {
    } = usePlayer()
 
   
-
-  if (!songInstance || !currentSong) {
+  if (!currentSong) {
     return
+  }
+
+  if (!songInstance) {
+    return <MusicPlayerSkeleton volume={volumeValue}/>
   }
 
   return (
@@ -60,7 +64,7 @@ const MusicPlayer = () => {
       </div>
       <div className={`${style.volume_container}`}>
         <SpeakerWaveIcon className={`${style.icon} ${style.volume_icon}`}/>
-        <input onChange={handleVolume} value={volumeValue} defaultValue={1} type="range" max={1} min={0} step={.05} className={`${style.volume_slider}`} />
+        <input onChange={handleVolume} value={volumeValue} type="range" max={1} min={0} step={.05} className={`${style.volume_slider}`} />
       </div>
     </footer>
   )

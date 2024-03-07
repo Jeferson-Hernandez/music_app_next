@@ -28,7 +28,6 @@
   flex-direction: row;
   margin-left: 10px;
   width: 300px;
-  height: auto;
 }
 
 .song_card_info {
@@ -36,21 +35,27 @@
 }
 
 .song_card_title {
-  font-size: 1.1em;
-  font-weight: 500;
+  width: 170px;
+  height: 15px;
+  background-color: var(--secondary);
   margin: 0;
+  border-radius: 10px;
 }
 
 .song_card_subtitle {
-  font-size: .9em;
-  font-weight: 300;
-  color: var(--secondary);
-  padding-top: 5px;
+  width: 160px;
+  height: 15px;
+  background-color: var(--secondary);
   margin: 0;
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
 .song_card_img {
   border-radius: 20px;
+  width: 80px;
+  height: 80px;
+  background-color: var(--secondary);
 }
 
 .icon {

@@ -34,6 +34,7 @@ export const usePlayer = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSong])
 
+
   const handlePlay = () => {
     const interval = setInterval(() => {
       if (song?.playing()) {
