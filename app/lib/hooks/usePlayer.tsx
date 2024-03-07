@@ -3,7 +3,7 @@ import { SongType, useSongStore } from "../store";
 import { Howl, Howler } from 'howler'
 
 export const usePlayer = () => {
-  const { currentSong, listSongs } = useSongStore();
+  const { currentSong } = useSongStore();
   const [song, setSong] = useState<Howl>()
   const [duration, setDuration] = useState<number>()
   const [seekSliderValue, setSeekSliderValue] = useState(0)

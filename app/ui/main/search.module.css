@@ -9,6 +9,7 @@
     align-items: center;
     height: 75px;
     margin-top: 20px;
+    position: relative;
   }
 
   .input_icon {
@@ -30,5 +31,42 @@
     background: var(--bg-dark);
     border-radius: 30px;
     padding-left: 20px;
+  }
+
+  .search_songs_container {
+    position: absolute;
+    top: 75px;
+    left: 55px;
+    background: var(--bg-dark);
+    z-index: 15;
+    width: 80%;
+    border-radius: 20px;
+  }
+
+  .song_card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-inline: 20px;
+    gap: 20px;
+    cursor: pointer;
+  }
+
+  .song_card:not(:last-child) {
+    border-bottom: 1px solid var(--secondary);
+  }
+
+  .song_card_img {
+    border-radius: 5px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .artist {
+    font-size: 1.1rem;
+    font-weight: 400;
   }
 }
