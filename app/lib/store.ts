@@ -25,11 +25,8 @@ export const useSongStore = create<SongStore>((set) => ({
       song_url: song.song_url
     }
 
-    const songInList = state.listSongs.find((song) => song.title == newSong.title)
-
     return {
       currentSong: newSong,
-      listSongs: songInList ? [...state.listSongs] : [...state.listSongs, newSong]
     }
   })
 }))

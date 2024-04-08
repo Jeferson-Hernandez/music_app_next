@@ -1,5 +1,5 @@
-import { ChangeEvent, FormEvent, RefObject, useEffect, useState } from "react";
-import { SongType, useSongStore } from "../store";
+import { ChangeEvent, useEffect, useState } from "react";
+import { useSongStore } from "../store";
 import { Howl, Howler } from 'howler'
 
 export const usePlayer = () => {

@@ -33,13 +33,6 @@
   display: none;
 }
 
-.ellipsis_icon {
-  position: absolute;
-  right: 0;
-  margin-right: 5px;
-  stroke: var(--secondary);
-}
-
 .icon {
   cursor: pointer;
   height: 30px;

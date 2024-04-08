@@ -4,7 +4,6 @@ import { unstable_noStore as noStore } from 'next/cache';
 
 
 export async function fetchSongs() {
-  noStore()
   try {
     const data = await sql<SongListType>`
       SELECT song_table.id, song_table.title, artist_table.name AS artist_name, cover_img_sm 
@@ -19,7 +18,6 @@ export async function fetchSongs() {
 }
 
 export async function fetchTopSongs() {
-  noStore()
   try {
     const data = await sql<TopChartsType>`
       SELECT song_table.id, song_table.title, song_table.likes, song_table.liked, artist_table.name AS artist_name, cover_img_sm FROM song_table
@@ -34,7 +32,6 @@ export async function fetchTopSongs() {
 }
 
 export async function fetchSongById(id: string) {
-  noStore()
   try {
     const data = await sql<SongByIdType>`
       SELECT song_table.id, song_table.title, song_table.likes, song_table.song_url, song_table.liked, song_table.cover_img_sm, song_table.cover_img_lg, artist_table.name AS artist_name, artist_table.follows AS artist_follows, album_table.title AS album_name, album_table.id AS album_id 
@@ -65,14 +62,12 @@ export async function fetchLikedSongs() {
 }
 
 export async function fetchSongsByAlbum(songId: string, albumId: string) {
-  noStore()
   try {
     const data = await sql<SongByAlbumType>`
       SELECT song_table.id, song_table.title, song_table.cover_img_sm, artist_table.name AS artist_name
       FROM song_table
       JOIN artist_table ON song_table.artist_id = artist_table.id
       WHERE song_table.album_id = ${albumId}
-      AND song_table.id != ${songId}
     `
     return data.rows
   } catch (error) {
