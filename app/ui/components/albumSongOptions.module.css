@@ -19,6 +19,7 @@
   width: 130px;
   padding: 15px 10px;
   border-radius: 10px;
+  z-index: 88888;
 }
 
 .menu_item {

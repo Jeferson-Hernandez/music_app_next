@@ -9,6 +9,7 @@ export async function fetchSongs() {
       SELECT song_table.id, song_table.title, artist_table.name AS artist_name, cover_img_sm 
       FROM song_table
       JOIN artist_table ON song_table.artist_id = artist_table.id
+      ORDER BY song_table.id DESC
       LIMIT 15
     `
     return data.rows
@@ -61,10 +62,10 @@ export async function fetchLikedSongs() {
   }
 }
 
-export async function fetchSongsByAlbum(songId: string, albumId: string) {
+export async function fetchSongsByAlbum(albumId: string) {
   try {
     const data = await sql<SongByAlbumType>`
-      SELECT song_table.id, song_table.title, song_table.cover_img_sm, artist_table.name AS artist_name
+      SELECT song_table.id, song_table.title, song_table.song_url, song_table.cover_img_sm, artist_table.name AS artist_name
       FROM song_table
       JOIN artist_table ON song_table.artist_id = artist_table.id
       WHERE song_table.album_id = ${albumId}

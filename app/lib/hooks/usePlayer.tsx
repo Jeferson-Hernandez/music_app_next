@@ -3,7 +3,7 @@ import { useSongStore } from "../store";
 import { Howl, Howler } from 'howler'
 
 export const usePlayer = () => {
-  const { currentSong } = useSongStore();
+  const { currentSong, nextSong, prevSong } = useSongStore();
   const [song, setSong] = useState<Howl>()
   const [duration, setDuration] = useState<number>()
   const [seekSliderValue, setSeekSliderValue] = useState(0)
@@ -21,21 +21,23 @@ export const usePlayer = () => {
     if (currentSong) {
       const songInstance = new Howl({
         src: currentSong.song_url,
-        onend: function() {
+        autoplay: true,
+        onend: function () {
           setIsPlaying(false)
+          nextSong()
         }
       })
 
       songInstance.on('load', function () {
         setSong(songInstance)
         setDuration(songInstance.duration())
+        setIsPlaying(true)
       })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSong])
 
-
-  const handlePlay = () => {
+  useEffect(() => {
     const interval = setInterval(() => {
       if (song?.playing()) {
         setSeekSliderValue(song.seek())
@@ -43,7 +45,11 @@ export const usePlayer = () => {
         clearInterval(interval)
       }
     }, 1000)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isPlaying])
 
+
+  const handlePlay = () => {
     if (song) {
       if (song.playing()) {
         song.pause()
@@ -66,6 +72,7 @@ export const usePlayer = () => {
   const handleSeekSlider = (e: ChangeEvent<HTMLInputElement>) => {
     if (song) {
       song.seek(Number(e.target.value))
+      setSeekSliderValue(song.seek())
     }
   }
 
@@ -78,7 +85,9 @@ export const usePlayer = () => {
     volumeValue: volume,
     handlePlay,
     handleVolume,
-    handleSeekSlider
+    handleSeekSlider,
+    nextSong,
+    prevSong
   }
 
 }

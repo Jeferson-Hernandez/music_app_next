@@ -1,38 +1,63 @@
-type SongType = {
+// type SongType = {
+//   id: string;
+//   title: string;
+//   artist_id: string;
+//   likes: string;
+//   album_id: string;
+//   liked: boolean;
+//   cover_img_sm: string;
+//   cover_img_lg: string;
+//   song_url: string;
+// }
+
+export type SongListType = {
   id: string;
   title: string;
-  artist_id: string;
+  cover_img_sm: string;
+  artist_name: string;
+}
+
+export type TopChartsType = {
+  id: string;
+  title: string;
+  likes: string;
+  liked: boolean;
+  cover_img_sm: string;
+  artist_name: string;
+}
+
+export type SongByIdType = {
+  id: string;
+  title: string;
   likes: string;
   album_id: string;
   liked: boolean;
   cover_img_sm: string;
   cover_img_lg: string;
   song_url: string;
+  artist_name: string;
+  album_name: string;
 }
 
-type ArtistType = {
-  id: string;
-  name: string;
-  follows: number;
-}
-
-type AlbumType = {
+export type SongByAlbumType = {
   id: string;
   title: string;
+  cover_img_sm: string;
+  artist_name: string;
+  song_url: string;
 }
 
-interface SongList extends SongType {
+export type LikedSongsType = {
+  id: string;
+  title: string;
+  cover_img_sm: string;
+  song_url: string;
   artist_name: string;
 }
 
-interface SongById extends SongList {
-  artist_follows: number;
-  album_name: string
+export type SearchSongsType = {
+  id: string;
+  title: string;
+  cover_img_sm: string;
+  artist_name: string;
 }
-
-export type SongListType = Omit<SongList, 'artist_id' | 'likes' | 'album_id' | 'liked' | 'cover_img_lg' | 'song_url'>
-export type TopChartsType = Omit<SongList, 'artist_id' | 'album_id' | 'cover_img_lg' | 'song_url'>
-export type SongByIdType = Omit<SongById, 'artist_id'>
-export type SongByAlbumType = Omit<SongList, 'artist_id' | 'likes' | 'album_id' | 'liked' | 'cover_img_lg' | 'song_url'>
-export type LikedSongsType = Omit<SongList, 'artist_id' | 'album_id' | 'cover_img_lg' | 'liked' | 'likes' >
-export type SearchSongsType = Omit<SongList, 'artist_id' | 'likes' | 'album_id' | 'liked' | 'cover_img_lg' | 'song_url'>

@@ -5,12 +5,11 @@ import Image from 'next/image'
 import AlbumSongOptions from '../components/albumSongOptions'
 
 type SongAlbumProps = {
-  songId: string,
   albumId: string
 }
 
-const SongAlbum = async({ songId, albumId }: SongAlbumProps) => {
-  const data = await fetchSongsByAlbum(songId, albumId)
+const SongAlbum = async({ albumId }: SongAlbumProps) => {
+  const data = await fetchSongsByAlbum(albumId)
 
   return (
     <div className={`${styles.content}`}>
@@ -27,7 +26,7 @@ const SongAlbum = async({ songId, albumId }: SongAlbumProps) => {
             />
             <HeartIcon className={`${styles.icon} ${styles.heart_icon}`} />
             <h2 className={`${styles.song_title}`}>{song.title} ~ {song.artist_name}</h2>
-            <AlbumSongOptions/>
+            <AlbumSongOptions song={song} />
           </div>
         ))
       }

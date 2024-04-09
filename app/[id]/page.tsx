@@ -22,7 +22,7 @@ const SongDetail = async({ params }: SongDetailProps) => {
         className={`${style.fixed} ${style.opacity}`}
       />
       <SongSection song={data} />
-      <SongAlbum songId={data.id} albumId={data.album_id} />
+      <SongAlbum albumId={data.album_id} />
     </div>
   )
 }

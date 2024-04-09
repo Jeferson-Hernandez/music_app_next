@@ -23,7 +23,9 @@ const MusicPlayer = () => {
     volumeValue,
     handleSeekSlider,
     handlePlay,
-    handleVolume
+    handleVolume,
+    nextSong,
+    prevSong
    } = usePlayer()
 
   
@@ -52,13 +54,13 @@ const MusicPlayer = () => {
       </div>
       <div className={`${style.player_controls_container}`}>
         <div className={`${style.player_controls}`}>
-          <BackwardIcon className={`${style.icon}`}/>
+          <BackwardIcon onClick={prevSong} className={`${style.icon}`}/>
           {
             isPlaying
               ? <PauseCircleIcon onClick={handlePlay}  className={`${style.icon} ${style.play_icon}`}/>
               : <PlayCircleIcon onClick={handlePlay}  className={`${style.icon} ${style.play_icon}`}/>
           }
-          <ForwardIcon className={`${style.icon}`}/>
+          <ForwardIcon onClick={nextSong} className={`${style.icon}`}/>
         </div>
         <input type="range" onChange={handleSeekSlider} value={seekSliderValue} max={duration} min={0} className={`${style.seek_slider}`} />
       </div>
