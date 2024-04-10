@@ -80,7 +80,7 @@
 
 .player_controls {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: row;
   flex-wrap: nowrap;
   width: 300px;
@@ -88,12 +88,17 @@
 
 
 @media (min-width: 650px) {
+
   /* .song_card_info {
     display: block;
     margin-left: 15px;
     margin-top: auto;
     margin-bottom: auto;
   } */
+
+  .player_controls {
+    justify-content: center;
+  }
 
   .song_card_title {
     font-size: 1.1em;
